@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="js/instascan.min.js"></script>
+    <script type="text/javascript" src="js/quagga.min.js"></script>
+    <script type="text/javascript" src="js/qr_barcode_scanner.js"></script>
+    <script type="text/javascript" src="js/1d_barcode_scanner.js"></script>
+    <script type="text/javascript" src="js/barcode_controls.js"></script>
+    <script>
+    $(document).ready(function(){
+      qr_barcode_scanner_app.init()
+    })
+   </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="midground"></div>
+  	  <div id="foreground"></div>
+      <h1>Loyalty Scanner</h1>
+
+      <a id="btn-scan-qr">
+        <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+      <a/>
+
+      <!-- For QR barcodes -->
+      <video id="barcode-capture"></video>
+
+      <div id="qr-result">
+        <span id="barcode-result"></span>
+      </div>
+    </div>
+  </body>
+</html>
