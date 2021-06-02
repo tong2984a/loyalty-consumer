@@ -5,7 +5,7 @@ var qr_barcode_scanner_app = {
       scanPeriod: 2
     });
     scanner.addListener('scan', function (content) {
-      var aliasValue = JSON.parse(content).alias;
+      var aliasValue = JSON.parse(content).alias.trim();
       var amountValue = JSON.parse(content).earn;
       var currencyCodeValue = "HKD";
       var parseThree = parseFloat(amountValue);
