@@ -13,6 +13,20 @@
       qr_barcode_scanner_app.init()
     })
    </script>
+   <style>
+     iframe {
+       margin-top: 20px;
+       margin-bottom: 30px;
+       -moz-border-radius: 12px;
+       -webkit-border-radius: 12px;
+       border-radius: 12px;
+       -moz-box-shadow: 4px 4px 14px #000;
+       -webkit-box-shadow: 4px 4px 14px #000;
+       box-shadow: 4px 4px 14px #000;
+       height: 100%;
+       background-color: white;
+     }
+   </style>
   </head>
   <body>
     <div id="container">
@@ -30,6 +44,8 @@
       <div id="qr-result">
         <span id="barcode-result"></span>
       </div>
+
+      <iframe src="http://localhost:3002/ad.html" width="100%" scrolling="yes" frameborder="0"></iframe>
     </div>
   </body>
 </html>
