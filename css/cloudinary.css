@@ -1,0 +1,23 @@
+
+.video-js {
+  vertical-align: middle !important;
+}
+
+.fancybox-content {
+  background: none;
+}
+
+.fancybox-close-small {
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px 5px 6px 6px !important;
+}
+
+#video-wrapper {
+  width: 70vw;
+}
+.col-centered {
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}

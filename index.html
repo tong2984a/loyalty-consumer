@@ -1,52 +1,37 @@
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://unpkg.com/cloudinary-video-player@1.5.3/dist/cld-video-player.min.css" rel="stylesheet">
-    <style>
-   .video-js {
-     vertical-align: middle !important;
-   }
-
-   .fancybox-content {
-     background: none;
-   }
-
-   .fancybox-close-small {
-     background: #fff;
-     border-radius: 50%;
-     padding: 6px 5px 6px 6px !important;
-   }
-
-   #video-wrapper {
-     width: 70vw;
-   }
-   .col-centered {
-      float: none;
-      margin-right: auto;
-      margin-left: auto;
-    }
- </style>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  </head>
-  <body class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-centered">
-          <div class="row">
-            <div class="col-xs-4">
-              <h1 class="text-primary">Loyalty Scanner</h1>
-            </div>
+<head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- cloudianry -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/dsar.css">
+  <link href="https://unpkg.com/cloudinary-video-player@1.5.3/dist/cld-video-player.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/cloudinary.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Survey -->
+  <link href="https://unpkg.com/survey-core@1.8.49/modern.min.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-centered">
+        <div class="row">
+          <div class="col-xs-4">
+            <h1 class="text-primary">Loyalty Scanner</h1>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-centered">
-          <div class="row">
-            <div class="col-xs-4">
-              <a id="btn-scan-qr">
-                <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+    </div>
+    <div class="row">
+      <div class="col-centered">
+        <div class="row">
+          <div class="col-xs-4">
+            <a id="btn-scan-qr">
+              <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
               <a/>
             </div>
             <div class="col">
@@ -62,54 +47,89 @@
         </div>
       </div>
 
-        <div class="row">
-          <div class="col-centered">
-            <video
-            id="player"
-            controls
-            muted
-            autoplay
-            class="cld-video-player-skin-dark"
-            width="500"></video>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link panel-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Play Ad to earn loyalty
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-centered">
+                  <video
+                  id="player"
+                  controls
+                  muted
+                  autoplay
+                  class="cld-video-player-skin-dark"
+                  width="500"></video>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-centered">
+                  <nav class="navbar">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a id="dish" class="nav-link bg-light" href="#" onclick="handleChange(1);">Play Ad - last visits: Happy Plantarian</a>
+                      </li>
+                      <li class="nav-item">
+                        <a id="grocery" class="nav-link bg-light" href="#" onclick="handleChange(2);">Play Ad - last purchases: SO COCO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a id="fashion" class="nav-link bg-light" href="#" onclick="handleChange(3);">Play Ad - preferences: Vegan Fashion & Lifestyle - Bag, Upcycled Product</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-centered text-center">
+                  <a class="btn btn-primary" href="https://ancient-eyrie-93473.herokuapp.com/survey/consumer.html" role="button">Modify your preferences</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-centered">
-            <nav class="navbar">
-              <!-- Links -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a id="dish" class="nav-link bg-light" href="#" onclick="handleChange(1);">Filter by last visits: Happy Plantarian</a>
-                </li>
-                <li class="nav-item">
-                  <a id="grocery" class="nav-link bg-light" href="#" onclick="handleChange(2);">Filter by last purchases: SO COCO</a>
-                </li>
-                <li class="nav-item">
-                  <a id="fashion" class="nav-link bg-light" href="#" onclick="handleChange(3);">Filter by preferences: Vegan Fashion & Lifestyle - Bag, Upcycled Product</a>
-                </li>
-              </ul>
-            </nav>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link panel-title" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                Data Access Request
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+              <div id="surveyResult"></div>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-centered text-center">
-            <a class="btn btn-primary" href="https://ancient-eyrie-93473.herokuapp.com/survey/consumer.html" role="button">Modify your preferences</a>
-          </div>
-        </div>
+      </div>
     </div>
-
-
     <!-- Latest compiled and minified JavaScript -->
-
+    <!-- qr -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="js/instascan.min.js"></script>
     <script type="text/javascript" src="js/quagga.min.js"></script>
     <script type="text/javascript" src="js/qr_barcode_scanner.js"></script>
     <script type="text/javascript" src="js/1d_barcode_scanner.js"></script>
     <script type="text/javascript" src="js/barcode_controls.js"></script>
+    <!-- Survey -->
+    <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
+    <script src="https://unpkg.com/survey-knockout@1.8.49/survey.ko.min.js"></script>
+    <script type="text/javascript" src="js/dsar.js"></script>
+    <!-- cloudinary -->
     <script src="https://unpkg.com/cloudinary-core@latest/cloudinary-core-shrinkwrap.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/cloudinary-video-player@1.5.3/dist/cld-video-player.min.js"
     type="text/javascript"></script>
@@ -150,6 +170,6 @@
     $(document).ready(function(){
       qr_barcode_scanner_app.init()
     })
-   </script>
+    </script>
   </body>
-</html>
+  </html>
